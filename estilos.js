@@ -167,3 +167,4 @@ function filtrarPorMar(mar) {
 
 
 mostrarEstilos(estilos);
+  
