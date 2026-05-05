@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas | Blox Fruits</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Blox Fruits</div>
+        <ul class="nav-links">
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="Frutas.html">Enciclopedia</a></li>
+            <li><a href="Tradeo.html">Calculador de Trades</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="EstilosPelea.html">Estilos de Pelea</a></li>
+        </ul>
+    </nav>
+
+    <section class="catalog-section">
+        <h1>Catálogo de Frutas</h1>
+        <p>Consulta las características y precios de todas las frutas disponibles.</p>
+        
+        <div class="search-container">
+          <input type="text" id="buscador" placeholder="Busca tu fruta (ej: Kitsune)...">
+        </div>
+        
+        <div class="filter-container">
+          <button class="btn-filter" onclick="filtrarPorRareza('todas')">Todas</button>
+          <button class="btn-filter" onclick="filtrarPorRareza('Mitica')">Míticas</button>
+          <button class="btn-filter" onclick="filtrarPorRareza('Legendaria')">Legendarias</button>
+          <button class="btn-filter" onclick="filtrarPorRareza('Rara')">Raras</button>
+          <button class="btn-filter" onclick="filtrarPorRareza('Poco Común')">Poco Común</button>
+          <button class="btn-filter" onclick="filtrarPorRareza('Común')">Común</button>
+        </div>
+
+        <div id="lista-frutas" class="container-cards">
+            
+        </div>
+    </section>
+
+    <script src="frutas.js"></script>
+</body>
+</html>

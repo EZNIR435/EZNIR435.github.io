@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos de Pelea | Blox Fruits</title>
+    <link rel="stylesheet" href="style.css">
+</head> <body>
+
+    <nav class="navbar">
+        <div class="logo">Blox Fruits</div>
+        <ul class="nav-links">
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="Frutas.html">Enciclopedia</a></li>
+            <li><a href="Tradeo.html">Calculador de Trades</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="EstilosPelea.html">Estilos de Pelea</a></li>
+        </ul>
+    </nav>
+
+    <section class="catalog-section">
+        <h1>Estilos de Pelea</h1>
+        <p>Consulta los requisitos y precios de todos los estilos disponibles.</p>
+        
+        <div class="search-container">
+          <input type="text" id="buscador" placeholder="Busca tu estilo (ej: Sanguine Art)...">
+        </div>
+        
+        <div class="filter-container">
+          <button class="btn-filter" onclick="filtrarPorMar('todas')">Todos</button>
+          <button class="btn-filter" onclick="filtrarPorMar('Sea 1')">Sea 1</button>
+          <button class="btn-filter" onclick="filtrarPorMar('Sea 2')">Sea 2</button>
+          <button class="btn-filter" onclick="filtrarPorMar('Sea 3')">Sea 3</button>
+        </div>
+
+        <div id="lista-estilos" class="container-cards">
+            </div>
+    </section>
+
+    <script src="estilos.js"></script>
+</body>
+</html>

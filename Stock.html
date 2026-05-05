@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock en Vivo | Blox Fruits Nexus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Blox Fruits</div>
+        <ul class="nav-links">
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="Frutas.html">Enciclopedia</a></li>
+            <li><a href="Tradeo.html">Calculador de Trades</a></li>
+            <li><a href="Stock.html">Stock</a></li>
+            <li><a href="EstilosPelea.html">Estilos de Pelea</a></li>
+        </ul>
+    </nav>
+
+    <main class="stock-page">
+        <section class="stock-header">
+            <h1>Stock de frutas</h1>
+            <p>Consulta el stock oficial y el tiempo restante para el próximo reset.</p>
+        </section>
+
+        <!-- Sección del Timer -->
+        <section class="timer-container">
+            <div class="timer-box">
+                <h3>Próximo Reset (Global UTC)</h3>
+                <div id="proximo-reset" class="timer-display">00h 00m 00s</div>
+            </div>
+        </section>
+
+        
+        <section class="manual-stock">
+            <h3>Frutas Destacadas</h3>
+            <div id="contenedor-stock" class="stock-grid">
+                <!-- Se llena automáticamente con stock.js -->
+            </div>
+        </section>
+
+
+        <section class="discord-integration">
+            <h3>Stock de Frutas</h3>
+            <div class="widget-wrapper">
+                <widgetbot
+                   server="1416169068653711422"
+                   channel="1499829754172408039"
+                   width="800"
+                   height="600"
+                ></widgetbot>
+            </div>
+        </section>
+
+        <!-- Sección de Frutas en Stock (Renderizadas por JS) -->
+        
+    </main>
+
+    <!-- SCRIPTS EN ORDEN DE DEPENDENCIA -->
+    <!-- 1. Motor del Widget de Discord -->
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+    
+    <!-- 2. Base de datos de frutas (Nombres, imágenes, precios) -->
+    <script src="frutas.js"></script>
+    
+    <!-- 3. Lógica del Stock y Timer -->
+    <script src="stock.js"></script>
+</body>
+</html>

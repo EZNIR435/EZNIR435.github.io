@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de Trades | Blox Fruits</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Blox Fruits</div>
+        <ul class="nav-links">
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="Frutas.html">Enciclopedia</a></li>
+            <li><a href="Tradeo.html">Calculador de Trades</a></li>
+            <li><a href="Stock.html">Stock</a></li>
+            <li><a href="EstilosPelea.html">Estilos de Pelea</a></li>
+        </ul>
+    </nav>
+
+<section class="trade-calculator">
+    <h2>Calculadora de Tradeo</h2>
+    <div class="trade-container">
+        
+        
+        <div class="trade-box">
+            <h3>Tu Oferta</h3>
+            
+            <div id="tus-slots" class="slots-grid"></div>
+            <div class="total-valor">Total: <span id="total-tu">0</span> B$</div>
+        </div>
+
+        <div class="trade-vs">VS</div>
+
+        
+        <div class="trade-box">
+            <h3>Fruta que Recibes</h3>
+           
+            <div id="sus-slots" class="slots-grid"></div>
+            <div class="total-valor">Total: <span id="total-su">0</span> B$</div>
+        </div>
+    </div>
+
+    <div id="resultado-trade" class="trade-result">
+        Selecciona las frutas para evaluar el trato.
+    </div>
+</section>
+
+
+<script src="frutas.js"></script>
+<script src="tradeo.js"></script>
+</body>
+</html>
