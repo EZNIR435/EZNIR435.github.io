@@ -52,7 +52,7 @@ actualizarTimer();
 async function cargarStockDesdeServidor() {
     try {
         
-        const respuesta = await fetch('http://localhost:3000/api/stock');
+        const respuesta = await fetch('https://blox-fruits-backend.onrender.com/api/stock');
         const datos = await respuesta.json();
         
         
