@@ -96,7 +96,7 @@ const estilos = [
         fragmentos: "5,000",
         requisitos: "Mastery 400 Death Step, Electric Claw, Sharkman Karate, Dragon Talon, SuperHuman <br> 20 Fish Tail, 20 Magma Ore, 10 Dragon Scale y 10 Mystic Droplet",
         localizacion: "Ancient Monk", 
-        imagen: "./images/GodHuman.jpg" 
+        imagen: "./images/Godhuman.jpg" 
     },
     { 
         nombre: "Sanguine Art", 
