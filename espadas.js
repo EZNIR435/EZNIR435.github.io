@@ -4,7 +4,7 @@ const espadas = [
         rareza: "Comùn",
         obtencion: "Sword Dealer (Sea 1)", 
         precio: "1,000",
-        imagen: "./images/Cutlass.jpg" 
+        imagen: "./images/cutlass.jpg" 
     },
     { 
         nombre: "Dual Katana", 
@@ -74,28 +74,42 @@ const espadas = [
         rareza: "Rara",
         obtencion: "Orbitus (Sea 2)", 
         precio: "Drop de Orbitus",
-        imagen: "./images/Gravity_Blade.jpg" 
+        imagen: "./images/gravity_blade.jpg" 
     },
     { 
         nombre: "Longsword", 
         rareza: "Rara",
         obtencion: "Diamond (Sea 2)", 
         precio: "Drop de Diamond",
-        imagen: "./images/Longsword.jpg" 
+        imagen: "./images/longsword.jpg" 
     },
     { 
         nombre: "Pipe", 
         rareza: "Rara",
         obtencion: "Sword Dealer of the East (Sea 1)", 
         precio: "100,000",
-        imagen: "./images/Pipe.jpg" 
+        imagen: "./images/pipe.jpg" 
     },
     { 
         nombre: "Soul Cane", 
         rareza: "Rara",
         obtencion: "Living Skeleton (Sea 1)", 
         precio: "750,000",
-        imagen: "./images/Soul_Cane.jpg" 
+        imagen: "./images/soul_cane.jpg" 
+    },
+    { 
+        nombre: "Trident", 
+        rareza: "Rara",
+        obtencion: "Fishman Lord (Sea 1)", 
+        precio: "drop de Fishman Lord",
+        imagen: "./images/trident.jpg" 
+    },
+    { 
+        nombre: "Wardens Sword", 
+        rareza: "Rara",
+        obtencion: "Chief Warden (Sea 1)", 
+        precio: "drop de Chief Warden",
+        imagen: "./images/wardens_sword.jpg" 
     },
 ];
 
