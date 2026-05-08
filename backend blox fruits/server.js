@@ -16,23 +16,45 @@ const client = new Client({
 
 let stockActual = []; 
 const canalStockID = "1499829754172408039"; 
+const listaBusqueda = ["dragon", "kitsune", "control", "yeti", "tiger", "spirit", "gas", "venom", "shadow", "dough", "t-rex", "trex", "t rex", "mammoth", "gravity"];
+
+
+function extraerFrutas(message) {
+    let textoTotal = message.content.toLowerCase();
+
+    
+    if (message.embeds.length > 0) {
+        message.embeds.forEach(embed => {
+            const contenidoEmbed = (embed.description || "") + 
+                                  (embed.fields ? embed.fields.map(f => f.value).join(" ") : "") +
+                                  (embed.title || "");
+            textoTotal += " " + contenidoEmbed.toLowerCase();
+        });
+    }
+
+    const encontradas = [];
+    listaBusqueda.forEach(fruta => {
+        if (textoTotal.includes(fruta)) {
+            let nombreFormateado = (fruta === "t-rex" || fruta === "trex" || fruta === "t rex") 
+                ? "T-Rex" 
+                : fruta.charAt(0).toUpperCase() + fruta.slice(1);
+            if (!encontradas.includes(nombreFormateado)) encontradas.push(nombreFormateado);
+        }
+    });
+    return encontradas;
+}
 
 client.on('messageCreate', (message) => {
     if (message.channel.id === canalStockID) {
-        const contenido = message.content.toLowerCase();
-        const frutasEncontradas = [];
-        const listaBusqueda = ["dragon", "kitsune", "control", "yeti", "tiger", "spirit", "gas", "venom", "shadow", "dough", "t-rex", "trex", "t rex", "mammoth", "gravity"];
         
-        listaBusqueda.forEach(fruta => {
-            if (contenido.includes(fruta)) {
-                let nombreFormateado = (fruta === "t-rex" || fruta === "trex" || fruta === "t rex") ? "T-Rex" : fruta.charAt(0).toUpperCase() + fruta.slice(1);
-                if (!frutasEncontradas.includes(nombreFormateado)) frutasEncontradas.push(nombreFormateado);
-            }
-        });
+       
+        if (message.author.id === client.user.id) return; 
 
-        if (frutasEncontradas.length > 0) {
-            stockActual = frutasEncontradas;
-            console.log("¡Stock actualizado!", stockActual);
+        const frutas = extraerFrutas(message);
+
+        if (frutas.length > 0) {
+            stockActual = frutas;
+            console.log("¡Stock actualizado desde mensaje!", stockActual);
         }
     }
 });
@@ -45,31 +67,21 @@ client.once('ready', async () => {
     console.log(`✅ Bot conectado como ${client.user.tag}`);
     try {
         const canal = await client.channels.fetch(canalStockID);
-        const mensajes = await canal.messages.fetch({ limit: 1 });
-        const ultimoMensaje = mensajes.first();
+        const mensajes = await canal.messages.fetch({ limit: 10 }); 
+        
 
-        if (ultimoMensaje) {
-            const contenido = ultimoMensaje.content.toLowerCase();
-            const frutasEncontradas = [];
-            const listaBusqueda = ["kitsune", "dragon", "control", "yeti", "tiger", "spirit", "gas", "venom", "shadow", "dough", "t-rex", "trex", "t rex", "mammoth", "gravity"];
-
-            listaBusqueda.forEach(fruta => {
-                if (contenido.includes(fruta)) {
-                    let nombreFormateado = (fruta === "t-rex" || fruta === "trex" || fruta === "t rex") ? "T-Rex" : fruta.charAt(0).toUpperCase() + fruta.slice(1);
-                    if (!frutasEncontradas.includes(nombreFormateado)) frutasEncontradas.push(nombreFormateado);
-                }
-            });
-
-            if (frutasEncontradas.length > 0) {
-                stockActual = frutasEncontradas;
+        for (const msg of mensajes.values()) {
+            const frutas = extraerFrutas(msg);
+            if (frutas.length > 0) {
+                stockActual = frutas;
                 console.log("📦 Stock inicial cargado:", stockActual);
+                break; 
             }
         }
     } catch (error) {
         console.error("Error al cargar stock inicial:", error);
     }
 });
-
 
 client.login(process.env.DISCORD_TOKEN);
 
