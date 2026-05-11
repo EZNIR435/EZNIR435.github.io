@@ -1,4 +1,5 @@
-const contenedorStock = document.getElementById('contenedor-stock');
+const contenedorNormal = document.getElementById('contenedor-normal');
+const contenedorMirage = document.getElementById('contenedor-mirage');
 const timerDisplay = document.getElementById('proximo-reset');
 
 const frutasDeseadas = ["Dragon", "Control", "Kitsune", "Yeti", "Tiger", "Spirit", "Gas", "Venom", "Shadow", "Dough", "T-Rex", "Mammoth", "Gravity"];
@@ -20,18 +21,19 @@ function actualizarTimer() {
     timerDisplay.innerText = `${h}h ${m}m ${s}s`;
 }
 
-function renderizarStock(listaDelBot) {
-    contenedorStock.innerHTML = "";
+
+function renderizarStock(listaDelBot, contenedor) {
+    contenedor.innerHTML = "";
     
-   
     const frutasParaMostrar = listaDelBot.filter(f => frutasDeseadas.includes(f));
 
     if (frutasParaMostrar.length === 0) {
-        contenedorStock.innerHTML = "<p class='no-stock'>No hay frutas especiales en el stock actual de la tienda.</p>";
+        contenedor.innerHTML = "<p class='no-stock'>No hay frutas especiales en este stock.</p>";
         return;
     }
 
     frutasParaMostrar.forEach(nombreFruta => {
+        
         const fruta = frutas.find(f => f.nombre === nombreFruta);
         if (fruta) {
             const card = document.createElement('div');
@@ -41,7 +43,7 @@ function renderizarStock(listaDelBot) {
                 <p>${fruta.nombre}</p>
                 <span>${fruta.precio} B$</span>
             `;
-            contenedorStock.appendChild(card);
+            contenedor.appendChild(card);
         }
     });
 }
@@ -51,16 +53,16 @@ actualizarTimer();
 
 async function cargarStockDesdeServidor() {
     try {
-        
         const respuesta = await fetch('https://blox-fruits-backend.onrender.com/api/stock');
-        const datos = await respuesta.json();
+        const datos = await respuesta.json(); // Ahora datos es { normal: [], mirage: [] }
         
         
-        renderizarStock(datos.frutas);
+        renderizarStock(datos.normal, contenedorNormal);
+        renderizarStock(datos.mirage, contenedorMirage);
+
     } catch (error) {
         console.error("Error: El servidor de Node.js no responde.");
     }
 }
-
 
 cargarStockDesdeServidor();

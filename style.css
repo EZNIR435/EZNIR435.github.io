@@ -259,3 +259,18 @@ select:hover {
         height: 400px;
     }
 }
+
+.stock-title.normal {
+    color: #f1c40f; /* Dorado/Amarillo */
+    border-bottom: 2px solid #f1c40f;
+}
+
+.stock-title.mirage {
+    color: #3498db; /* Azul Mirage */
+    border-bottom: 2px solid #3498db;
+}
+
+#contenedor-mirage .stock-card {
+    border: 2px solid #00d4ff; /* Un azul brillante para Mirage */
+    background: rgba(0, 212, 255, 0.1);
+}
