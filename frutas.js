@@ -367,7 +367,7 @@ function mostrarFrutas(lista) {
 }
 
 
-inputBuscador.addEventListener('keyup', () => {
+//inputBuscador.addEventListener('keyup', () => {
     const textoUsuario = inputBuscador.value.toLowerCase();
     
     const frutasFiltradas = frutas.filter(fruta => {
