@@ -330,7 +330,7 @@ const frutas = [
 ];
 
 const contenedor = document.getElementById('lista-frutas');
-const inputBuscador = document.getElementById('buscador');
+inputBuscador = document.getElementById('buscador');
 
 
 function mostrarFrutas(lista) {
@@ -367,7 +367,7 @@ function mostrarFrutas(lista) {
 }
 
 
-const inputBuscador = document.getElementById('inputBuscador');
+const inputBuscador = document.getElementById('buscador');
 
 if (inputBuscador) {
     inputBuscador.addEventListener('keyup', () => {
