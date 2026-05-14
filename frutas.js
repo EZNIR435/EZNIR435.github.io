@@ -367,16 +367,19 @@ function mostrarFrutas(lista) {
 }
 
 
-inputBuscador.addEventListener('keyup', () => {
-    const textoUsuario = inputBuscador.value.toLowerCase();
-    
-    const frutasFiltradas = frutas.filter(fruta => {
-        return fruta.nombre.toLowerCase().includes(textoUsuario);
+const inputBuscador = document.getElementById('inputBuscador');
+
+if (inputBuscador) {
+    inputBuscador.addEventListener('keyup', () => {
+        const textoUsuario = inputBuscador.value.toLowerCase();
+        
+        const frutasFiltradas = frutas.filter(fruta => {
+            return fruta.nombre.toLowerCase().includes(textoUsuario);
+        });
+
+        mostrarFrutas(frutasFiltradas);
     });
-
-
-    mostrarFrutas(frutasFiltradas);
-});
+}
 mostrarFrutas(frutas);
 
 
