@@ -330,7 +330,6 @@ const frutas = [
 ];
 
 const contenedor = document.getElementById('lista-frutas');
-inputBuscador = document.getElementById('buscador');
 
 
 function mostrarFrutas(lista) {
