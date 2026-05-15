@@ -54,7 +54,7 @@ actualizarTimer();
 async function cargarStockDesdeServidor() {
     try {
         const respuesta = await fetch('https://blox-fruits-backend.onrender.com/api/stock');
-        const datos = await respuesta.json(); // Ahora datos es { normal: [], mirage: [] }
+        const datos = await respuesta.json();
         
         
         renderizarStock(datos.normal, contenedorNormal);
