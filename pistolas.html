@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espadas | Blox Fruits</title>
+    <title>Armas | Blox Fruits</title>
     <link rel="stylesheet" href="style.css">
-</head> <body>
+</head>
+<body>
 
     <nav class="navbar">
         <div class="logo">Blox Fruits</div>
@@ -21,26 +22,26 @@
     </nav>
 
     <section class="catalog-section">
-        <h1>Catálogo de Espadas</h1>
-        <p>Consulta cómo obtener y las rarezas de todas las espadas.</p>
+        <h1>Catálogo de Pistolas (guns)</h1>
+        <p>Consulta cómo obtener y las rarezas de todas las pistolas.</p>
         
         <div class="search-container">
-          <input type="text" id="buscador" placeholder="Busca tu espada (ej: Cursed Dual Katana, Shark Anchor)...">
+          <input type="text" id="buscador" placeholder="Busca tu pistola (ej: Soul Guitar, Acidum Rifle)...">
         </div>
         
         <div class="filter-container">
           <button class="btn-filter" onclick="filtrarPorRareza('todas')">Todas</button>
-          <button class="btn-filter" onclick="filtrarPorRareza('Mitica')">Míticas</button>
-          <button class="btn-filter" onclick="filtrarPorRareza('Legendaria')">Legendarias</button>
-          <button class="btn-filter" onclick="filtrarPorRareza('Rara')">Raras</button>
-          <button class="btn-filter" onclick="filtrarPorRareza('Poco Común')">Poco Común</button>
-          <button class="btn-filter" onclick="filtrarPorRareza('Común')">Común</button>
+          <button class="btn-filter" onclick="filtrarPorRareza('mitica')">Míticas</button>
+          <button class="btn-filter" onclick="filtrarPorRareza('legendaria')">Legendarias</button>
+          <button class="btn-filter" onclick="filtrarPorRareza('rara')">Raras</button>
+          <button class="btn-filter" onclick="filtrarPorRareza('poco comun')">Poco Común</button>
+          <button class="btn-filter" onclick="filtrarPorRareza('comun')">Común</button>
         </div>
 
-        <div id="lista-espadas" class="container-cards">
-            </div>
+        <div id="lista-pistolas" class="container-cards">
+        </div>
     </section>
 
-    <script src="espadas.js"></script>
+    <script src="pistolas.js"></script>
 </body>
 </html>
